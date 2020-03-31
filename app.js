@@ -9,6 +9,7 @@ var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
 
 init();
+resetButton.addEventListener("click",reset);
 
 function init(){
   for(var i=0; i<modeButtons.length;  ++i){
@@ -30,7 +31,7 @@ function init(){
         messageDisplay.textContent = "Correct";
         h1.style.backgroundColor = clickedColor;
         changeColors(clickedColor);
-        reset.textContent = "Play Again?";
+        resetButton.textContent = "Play Again?";
       }
       else{
         this.style.backgroundColor="#232323";
@@ -58,9 +59,6 @@ function reset(){
   }
   h1.style.backgroundColor = "steelBlue";
 }
-
-
-resetButton.addEventListener("click",reset);
 
 function changeColors(color){
   for (var i=0; i<squares.length; ++i){
